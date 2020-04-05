@@ -1,5 +1,6 @@
 # anki-enhance-main-window
-Adds a lot of features to the main window. Allows configuration of those features. Configurations are explained at the end of this document.
+Adds a lot of features to the main window and allows the user to configure those features.
+Configurations are explained at the end of this document.
 
 
 Important updates:
@@ -10,85 +11,119 @@ Important updates:
 * February: counting the number of reviews, today and any time in the past, and the number of cards seen today.
 * 19th January 2019: many bugs corrected. Configuration can be changed without restarting Anki.
 * 8th November 2018: you can configure the add-on using anki 2.1's
-  configuration method. The configuration won't be lost during next update of the add-on !
+  configuration method. The configuration won't be lost during next update of the add-on!
 
 ![Example](example.png)
 
 # Features
-## Column
-Most features offered by this add-on are related to some column.
+## Columns
+Most of the features offered by this add-on are related to a column in the main window.
 
-You can change the order of the columns by dragging their name and dropping them at their new position.
+The order of the columns can be changed by clicking on a column name and dragging it to a new position.
+You can also click on the name and select `Delete` to remove it from the main window entirely.
+
+
 ### Name of the (sub)deck
-There is not a lot of change in this column, apart from the decks's color.
+There is not a lot of change in this column, apart from the decks' color.
+
 #### Empty decks
 If a (sub)deck is empty, it turns red. (You can configure the color.)
 
-This may not be useful for everybody. But if you want to know when a deck is empty in order to add new notes in it, it avoids having to check the number of new cards in each deck. For example, if you want to learn guitar chords, it will let you know that it is time to add new chords to Anki.
+This is useful if you want a visual cue to know when a deck runs out of new cards.
+It saves you from having to check the number of new cards in each deck manually.
+For example, if you want to learn guitar chords,
+the color change alerts you that it is time to add new chords to Anki.
 
-Better ! If you use subdecks, the ancestors of an empty subdeck become blue (also configurable). This allows you to find decks with an empty subdeck. Hence, it helps finding empty subdecks without having to expand every top-level deck.
+Better yet! If you use subdecks, the ancestors of an empty subdeck become blue (also configurable).
+This allows you to notice when a subdeck is empty, even if it is not visible.
+Hence, it saves you from having to expand every parent deck to check subdecks.
 
-Note that, in some cases, you don't want the name to become red, e.g. you wanted to learn the name of the Greek letters. When you know all of them, you won't add any new note ever. You just have to add a semicolon (;) (it is configurable) to the name of the deck, and it will not turn red.
+Note that, in some cases, you don't want the name to become red,
+e.g. you wanted to learn the name of the Greek letters.
+If the deck has the entire alphabet, when you run out of new cards you don't want the cue.
+You just have to add a semicolon (;) (also configurable) to the name of the deck,
+and it will not turn red when it runs out of new cards.
+
 #### Marked cards
-Decks with marked card have a blue background (configurable). Furthermore, if the deck's name contains a semicolon (i.e. as explained above, the deck is ended), then the background become yellow.
+Decks with marked cards have a blue background (configurable).
+Furthermore, if the deck's name contains a semicolon (i.e. as explained above, the deck has no new cards),
+then the background becomes yellow.
 
 
 ### Learning
-The number of reviews of cards in learning. By default you will see the number of reviews that can be done now, and in parentheses the number of reviews which can be done later today.
+The number of reviews of cards in the Learning stage.
+By default you will see the number of reviews that can be done now,
+and in parentheses the total number of reviews queued.
 
 ### Review
-The number of cards which you have seen in the past, and that you should see today. By default, the number of cards you will see today. And in parentheses the number of cards you should see today, but that you will not see today because of your limit.
-
+The number of cards which you have seen in the past, and that you should see today.
+By default, the number of cards you will see today. And in parentheses the number of cards you should see today, but that you will not see today because of your limit.
 
 ### New today
-This column called new in Anki. New means «number of new cards you will see today», with the caveat that it is not exactly true for subdecks.
+This column is called `New` in Anki. It is the number of new cards you will see today, with the caveat that it is not exactly true for subdecks.
 
 ### New
-The column name "new" is deprecated. It is kept for backwards compatibility, but may be removed one day. It is the same thing as New Today.
+The column name `New` is deprecated. It is kept for backwards compatibility, but may be removed one day. It is the same thing as `New Today`.
 
 ### Due
-By default, this column is hidden. Indeed, it became two columns «due now» and «later». We recall that, in Anki, a due card is a card which is not new, and that you have to view again today.
+By default, this column is hidden. That is because it became two columns: `Due Now` and `Later`.
+In Anki, a due card is a card which is not new, and is scheduled to be reviewed today.
 
 ### Unseen
-The number of cards which you have never answered. Most of these cards are cards you have never seen, but it also considers cards you have seen and buried. By default, the number of unseen cards which you will discover today, and in parentheses the number of unseen cards you will not see today.
+The number of cards which you have never answered.
+Most of these cards are cards you have never seen,
+but it also considers cards you have seen and buried.
+By default, the number of unseen cards which you will discover today,
+and in parentheses the number of unseen cards you will not see today.
 
 ### Young
-The number of cards whose delay is less than 3 weeks
+The number of cards whose delay is less than 3 weeks.
 
 ### Mature
-The number of cards whose delay is least at least 3 weeks
+The number of cards whose delay is least at least 3 weeks.
 
 ### Buried
-The number of Buried cards. Recall that a buried card is a card you will not see today, either because you pressed the «bury» button, or because you saw another card from the same note, so it was automatically buried.
+The number of Buried cards. Recall that a buried card is a card you will not see today,
+either because you pressed the `Bury` button,
+or because you saw another card from the same note, so it was automatically buried.
 
 ### Suspended
-The number of Suspended cards. Recall that a suspended card is a card you will never see again, unless you unsuspend it manually (using the browser)
+The number of Suspended cards. Recall that a suspended card is a card you will never see again, unless you unsuspend it manually (using the browser.)
 
 ### Total
-The number of cards in this deck. It is not the sum of the preceding column, since it contains also cards you have already seen and which are not yet due (and it counts only once a card with multiple reviews).
+The number of cards in this deck. It is not the sum of the preceding columns,
+since it also contains cards you have already seen and which are not yet due
+(and it only counts a card with multiple reviews once.)
 
 ### Today
-The total number of reviews you will see today (assuming you always press good)
+The total number of reviews you will see today (assuming you always press good.)
 
 ### Configuration
-The last column states which options group is used for the current deck. This avoids the pain of opening the menu to see the option names. Really useful when you have a lot of decks and want to see which is the last deck which used this old configuration you want to delete.
+The last column states which options group is used for the current deck.
+This avoids the pain of opening the menu to see the option names.
+Really useful when you have a lot of decks and want to see which is the last
+deck which used this old configuration you want to delete.
 
 ## Capping
 By default, Anki does not show any number greater than 1000. Instead it shows 1000+.
-You can now edit this limit, or remove it entirely (by using a negative number). If you set the limit to 0, you will either see a 0, or "+".
+You can now edit this limit, or remove it entirely (by using a negative number).
+If you set the limit to 0, you will either see a 0, or "+".
 
 
 How to configure this add-on
 ===========================
 Most options are configurable. If some option is not, send me an email, I'll see what I can do.
 
-In order to configure this add-on,(hence, to configure what is shown in the main window) Go to Tools>add-ons>[name of this add-on]>Config. You'll see the configuration file. It will also display in a small window a display of the configuration's rule. We copy them below
+In order to configure this add-on,(hence, to configure what is shown in the main window)
+go to `Tools>Add-ons>`, select `Enhance main window`, then click `Config`.
+You'll see the configuration file as well as an explanation of how the
+configuration works. The explanation is copied below.
 
 
 # Configuration file
 
 
-# Configuration of Anki's addon Enhanced Main
+# Configuration of the Anki Add-on: Enhance Main Window
 
 1. We first discuss the various small configurations related to the whole add-on.
 1. We then explain how to configure each column.
